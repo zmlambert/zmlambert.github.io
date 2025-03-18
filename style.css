@@ -10,7 +10,7 @@ header {
 /* generic classes used anywhere!!! */
 
 .webtitle {
-  font-size: 100;
+  font-size: 8em;
   color: #ffffff;
   height: 1.3em;
 }
@@ -100,7 +100,7 @@ div.container1 {
 }
 
 div.container1-content {
-  font-size: 30;
+  font-size: 1.75em;
   color: #ffffff;
   text-align: center;
 }
