@@ -1,120 +1,37 @@
 body {
-  background-image: url("img/space.gif");
-  overflow-x: hidden;
+  font-family: Open Sans, Arial;
+  margin: 2.5em auto;
+  max-width: 50em;
+  line-height: 1.6;
+  font-size: 1.125em;
+  color: #454545;
+  padding: 0 0.625em;
+  background-color: #eeeeee;
 }
 
-header {
-  color: #ffffff;
+h1 {
+  margin-bottom: 0;
 }
 
-/* generic classes used anywhere!!! */
-
-.webtitle {
-  font-size: 8em;
-  color: #ffffff;
-  height: 1.3em;
+h1,
+h2,
+h3 {
+  line-height: 1.8;
 }
 
-.hover-cancel:hover {
-  cursor: not-allowed;
+a {
+  color: #07a;
 }
 
-.navbar {
-  width: 75%;
-  margin: 0 auto;
-  justify-content: space-between;
-  display: flex;
-  align-items: center;
-}
-
-.hidden {
-  visibility: hidden;
-}
-
-.center-align {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.center-noinline {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nomargin {
-  margin: 0;
-}
-
-.mono {
-  font-family: monospace;
-}
-
-/* email and images in text */
-
-img.text-size {
-  height: 1em;
-}
-
-img.send-mail {
-  height: 2.5em;
-}
-
-img.dotsize {
-  height: 0.4em;
-  align-self: unset;
-  vertical-align: bottom;
-  position: relative;
-  top: 0.21em;
-}
-
-/* !!! awesome list !!! */
-
-ul {
-  list-style: none;
-  margin-left: 0;
-  padding-left: 0;
-}
-
-li {
+.email {
+  font-size: 0.75em;
   padding-left: 1em;
-  text-indent: -1em;
-  padding-left: 0pt;
 }
 
-li:before {
-  content: url("./img/i_ball.gif");
-  padding-right: 5px;
-}
-
-/* divs */
-
-div.container1 {
-  width: 75%;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ffffff;
-  background-color: #7231da;
-}
-
-div.container1-content {
-  font-size: 1.75em;
-  color: #ffffff;
-  text-align: center;
-}
-div.container1-content > ul {
-  display: inline-block;
-  text-align: left;
-}
-
-div.underconstruction {
-  background: url("img/underconstruction.gif") no-repeat;
-  background-position: bottom right;
-  position: fixed;
-  bottom: 0;
+.funmode {
+  position:absolute;
+  top:0;
   right: 0;
-  width: 149;
-  height: 99;
+  margin-top: 1em;
+  margin-right: 1em;
 }
