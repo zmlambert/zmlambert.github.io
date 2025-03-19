@@ -99,23 +99,16 @@ li:before {
 
 /* divs */
 
-div.container1 {
-  width: 75%;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ffffff;
-  background-color: #7231da;
-}
-
-div.container1-content {
+.content {
   font-size: 1.75em;
   color: #ffffff;
   text-align: center;
 }
-div.container1-content > ul {
+.content > ul {
   display: inline-block;
   text-align: left;
 }
+
 
 div.underconstruction {
   background: url("img/underconstruction.gif") no-repeat;
