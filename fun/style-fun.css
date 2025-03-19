@@ -15,6 +15,10 @@ header {
   height: 1.3em;
 }
 
+a {
+  color: lightblue;
+}
+
 .hover-cancel:hover {
   cursor: not-allowed;
 }
@@ -29,6 +33,30 @@ header {
 
 .hidden {
   visibility: hidden;
+}
+
+.content {
+  font-size: 1.75em;
+  color: #ffffff;
+  text-align: center;
+}
+
+.content>ul {
+  display: inline-block;
+  text-align: left;
+}
+
+.content-noalign {
+  font-size: 1.75em;
+  color: #ffffff;
+}
+
+.content-small {
+  color: #ffffff;
+}
+
+.overunder {
+  text-decoration: overline underline;
 }
 
 .center-align {
@@ -53,13 +81,17 @@ header {
 }
 
 .boringmode {
-    position: absolute;
-    top:0;
-    right: 0;
-    margin-top: 1em;
-    margin-right: 1em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 1em;
+  margin-right: 1em;
 }
-  
+
+.columnar {
+  max-width: 30em;
+}
+
 /* email and images in text */
 
 img.text-size {
@@ -99,16 +131,6 @@ li:before {
 
 /* divs */
 
-.content {
-  font-size: 1.75em;
-  color: #ffffff;
-  text-align: center;
-}
-.content > ul {
-  display: inline-block;
-  text-align: left;
-}
-
 
 div.underconstruction {
   background: url("img/underconstruction.gif") no-repeat;
@@ -118,4 +140,12 @@ div.underconstruction {
   right: 0;
   width: 149;
   height: 99;
+}
+
+/* special */
+.new {
+  position: absolute;
+  transform: rotate(-30deg);
+  top: 0;
+  left: -10%;
 }
