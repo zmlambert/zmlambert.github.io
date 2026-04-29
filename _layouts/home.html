@@ -1,0 +1,24 @@
+---
+layout: base
+---
+{{ content }}
+<section>
+  <p class="post-list-header">$ ls -lt posts/</p>
+  <ul class="post-list">
+    {%- if site.posts.size > 0 -%}
+      {%- for post in site.posts -%}
+      <li class="post-list-item">
+        <span class="post-list-perm">-rw-r--r--</span>
+        <span class="post-list-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </span>
+        <time class="post-list-date" datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date: "%Y-%m-%d" }}
+        </time>
+      </li>
+      {%- endfor -%}
+    {%- else -%}
+      <li class="post-list-empty">no posts yet.</li>
+    {%- endif -%}
+  </ul>
+</section>

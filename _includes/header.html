@@ -1,0 +1,30 @@
+<header class="site-header">
+  <div class="site-wrapper">
+    <div class="header-inner">
+      <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="{{ '/' | relative_url }}">home</a>
+        {%- assign nav_pages = site.pages | where_exp: "p", "p.title != nil" | sort: "nav_order" -%}
+        {%- for p in nav_pages -%}
+          {%- unless p.url == "/" or p.url contains "feed" or p.url contains "404" -%}
+        <a href="{{ p.url | relative_url }}">{{ p.title | downcase }}</a>
+          {%- endunless -%}
+        {%- endfor -%}
+        <span class="theme-switcher">
+          <span class="ts-label" aria-hidden="true">theme:</span>
+          <div class="ts-dropdown"
+               id="theme-dropdown"
+               role="combobox"
+               aria-label="Select colour theme"
+               aria-expanded="false"
+               aria-haspopup="listbox"
+               tabindex="0">
+            <span class="ts-current" id="theme-current"></span>
+            <span class="ts-arrow" aria-hidden="true">▾</span>
+            <ul class="ts-menu" role="listbox" id="theme-menu"></ul>
+          </div>
+        </span>
+      </nav>
+    </div>
+  </div>
+</header>

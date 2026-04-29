@@ -1,0 +1,38 @@
+---
+layout: base
+---
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+    <div class="post-meta">
+      <span>
+        <span class="meta-label">date:</span>
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+      </span>
+      {%- if page.tags.size > 0 -%}
+      <span>
+        <span class="meta-label">tags:</span>
+        {%- for cat in page.tags -%}
+        <a class="tag" href="/search/?tag={{ cat | uri_escape }}">{{ cat }}</a>
+        {%- endfor -%}
+      </span>
+      {%- endif -%}
+    </div>
+  </header>
+
+  <div class="post-content">
+    {{ content | toc }}
+  </div>
+
+  <nav class="post-nav" aria-label="Post navigation">
+    {%- if page.next -%}
+    <a class="prev" href="{{ page.next.url | relative_url }}">{{ page.next.title | escape }}</a>
+    {%- else -%}
+    <span></span>
+    {%- endif -%}
+    {%- if page.previous -%}
+    <a class="next" href="{{ page.previous.url | relative_url }}">{{ page.previous.title | escape }}</a>
+    {%- endif -%}
+  </nav>
+</article>
+<script src="{{ '/assets/js/toc.js' | relative_url }}"></script>

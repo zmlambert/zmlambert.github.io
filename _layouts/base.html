@@ -1,0 +1,22 @@
+---
+layout: none
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="gruvbox">
+<head>
+  <script>
+    (function(){var t=localStorage.getItem('theme')||'gruvbox';document.documentElement.setAttribute('data-theme',t);})();
+  </script>
+  {%- include head.html -%}
+</head>
+<body>
+  {%- include header.html -%}
+  <main>
+    <div class="site-wrapper">
+      {{ content }}
+    </div>
+  </main>
+  {%- include footer.html -%}
+  <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+</body>
+</html>
