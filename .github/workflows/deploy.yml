@@ -23,9 +23,10 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
-          bundler-cache: true
 
       - uses: actions/configure-pages@v5
+
+      - run: gem install bundler && bundle install
 
       - run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
