@@ -1,0 +1,44 @@
+<section class="edit-history" data-path="{{ page.path }}">
+  <details>
+    <summary class="edit-history-toggle">edit history</summary>
+    <ol class="edit-history-list" aria-live="polite">
+      <li class="edit-history-loading">loading&hellip;</li>
+    </ol>
+  </details>
+</section>
+<script>
+(function () {
+  var section = document.currentScript.previousElementSibling;
+  var details = section.querySelector('details');
+  var list = section.querySelector('.edit-history-list');
+  var path = section.dataset.path;
+  var loaded = false;
+
+  details.addEventListener('toggle', function () {
+    if (!details.open || loaded) return;
+    loaded = true;
+
+    fetch('https://api.github.com/repos/zmlambert/zmlambert.github.io/commits?path=' + encodeURIComponent(path) + '&per_page=25')
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function (commits) {
+        if (!commits.length) {
+          list.innerHTML = '<li class="edit-history-empty">no history found</li>';
+          return;
+        }
+        list.innerHTML = commits.map(function (c, i) {
+          var date = new Date(c.commit.author.date).toISOString().slice(0, 10);
+          var msg = c.commit.message.split('\n')[0];
+          var url = 'https://github.com/zmlambert/zmlambert.github.io/commits/' + c.sha + '/' + path;
+          var label = i === 0 ? ' <span class="edit-history-badge">latest</span>' : '';
+          return '<li><time>' + date + '</time> &mdash; <a href="' + url + '" target="_blank" rel="noopener">' + msg + '</a>' + label + '</li>';
+        }).join('');
+      })
+      .catch(function (err) {
+        list.innerHTML = '<li class="edit-history-error">could not load history: ' + err.message + '</li>';
+      });
+  });
+})();
+</script>
