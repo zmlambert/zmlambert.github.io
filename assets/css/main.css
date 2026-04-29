@@ -165,8 +165,8 @@ html {
 }
 
 body {
-  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code',
-               'Source Code Pro', 'Consolas', 'Courier New', monospace;
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code',
+               'Consolas', 'Courier New', monospace;
   background-color: var(--bg);
   color: var(--fg);
   line-height: 1.7;
