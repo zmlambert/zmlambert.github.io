@@ -11,7 +11,8 @@ toc: true
 this guide is something i wrote myself to jumpstart creation of unity game mods using BepInEx. i primarily use linux, so this guide will be tailored to that. most things will work fine in Windows, but i do use a couple CLI utilities that aren't available on Windows by default.
 
 **prerequisites**:
-- unity game
+- unity game built with mono
+>i am unsure if these instructions work exactly with il2cpp
 - dotnet command line.
 - jetbrains rider
 - your favorite .NET decompiler
@@ -24,9 +25,9 @@ grab a release from [here](https://github.com/BepInEx/BepInEx/releases). at the 
 
 the release you choose **depends on your game's platform**, not your own. and be mindful of `x86` vs. `x64` releases.
 
-## drop files game
+## extract to game folder
 
-place the release files next to your game's exe file. for example, i will be using *BABBDI*. i highlighted the files from BepInEx.
+extract the BepInEx release files next to your game's exe file. for example, i will be using *BABBDI*. i highlighted the files from BepInEx.
 
 {% highlight console mark_lines="3 4 5 6 10" %}
 drwxr-xr-x 6 user user 4.0K Apr 28 17:55 Babbdi_Data
@@ -110,7 +111,7 @@ BepInEx 6 Unity Il2Cpp Plugin    bep6plugin_unity_il2cpp  [C#]      BepInEx/BepI
 BepInEx 6 Unity Mono Plugin      bep6plugin_unity_mono    [C#]      BepInEx/BepInEx 6/Plugin/Unity/Mono
 {% endhighlight %}
 
->*take note of the short name for your BepInEx version* - in this case, `bep6plugin_unity_mono` is what i will be using
+>*take note of the short name for your BepInEx version* - in this case, `bep6plugin_unity_mono` is what i will be using.
 
 ## `TFW` - .NET Target Framework
 
@@ -119,11 +120,11 @@ navigate to the `game_Data/Managed/` and look for *one* of these dlls in this or
 1. `netstandard.dll`
 2. `mscorlib.dll`
 
->`game_Data` would be `BABBDI_Data` in my case
+>`game_Data` would be `Babbdi_Data` in my case
 
 you only need one of them.
 
-### `netstandard.dll`
+### netstandard.dll
 
 look for a `netstandard.dll` and open it with your .NET decompiler. you are looking for something that indicates the version, e.g.:
 
@@ -135,7 +136,7 @@ or
 
 in my case, the TFW is `netstandard2.1`. you'll see a pattern `netstandard#.#` with these.
 
-### `mscorlib.dll`
+### mscorlib.dll
 
 lok at the same places and you'll probably see `4.0.0.0`. so your TFW is `net4.6` 
 
@@ -187,7 +188,7 @@ then click *OK*.
 
 you will likely encounter build conflicts when you build
 
-![build output with conflict](/assets/images/posts/bepinex-setup/conflict.png)
+>![build output with conflict](/assets/images/posts/bepinex-setup/conflict.png)
 
 
 try editing the csproj file below like so:
