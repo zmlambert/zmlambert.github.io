@@ -8,5 +8,9 @@
     });
   }
   stretchHll();
-  window.addEventListener('resize', stretchHll);
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(stretchHll, 100);
+  });
 })();

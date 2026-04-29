@@ -23,26 +23,6 @@
   --gray:   #928374;
 }
 
-:root[data-theme="gruvbox"] {
-  --bg:     #282828;
-  --bg1:    #3c3836;
-  --bg2:    #504945;
-  --bg3:    #665c54;
-  --bg4:    #7c6f64;
-  --fg:     #ebdbb2;
-  --fg1:    #d5c4a1;
-  --fg2:    #bdae93;
-  --fg3:    #a89984;
-  --red:    #fb4934;
-  --green:  #b8bb26;
-  --yellow: #fabd2f;
-  --blue:   #83a598;
-  --purple: #d3869b;
-  --aqua:   #8ec07c;
-  --orange: #fe8019;
-  --gray:   #928374;
-}
-
 /* Dracula */
 :root[data-theme="dracula"] {
   --bg:     #282a36;
@@ -398,49 +378,47 @@ h4 { font-size: 1rem;    color: var(--blue);   }
 h5, h6 { font-size: 0.9rem; color: var(--purple); }
 
 /* Glow-style highlighted heading blocks scoped to content areas */
+.post-content h1, .post-content h2, .post-content h3,
+.page-content h1,  .page-content h2,  .page-content h3 {
+  color: var(--bg);
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  border-top: 3px solid var(--bg4);
+}
+
 .post-content h1,
 .page-content h1 {
   background: var(--yellow);
-  color: var(--bg);
   font-size: 1.4rem;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
   margin-top: 3rem;
   padding: 0.25em 1.5rem;
-  border-top: 3px solid var(--bg4);
 }
 
 .post-content h2,
 .page-content h2 {
   background: var(--green);
-  color: var(--bg);
   font-size: 1.2rem;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
   margin-top: 2.5rem;
   padding: 0.2em 1.5rem;
-  border-top: 3px solid var(--bg4);
 }
 
 .post-content h3,
 .page-content h3 {
   background: var(--blue);
-  color: var(--bg);
   font-size: 1.05rem;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
   margin-top: 2.5rem;
   padding: 0.15em 1.5rem;
-  border-top: 3px solid var(--bg4);
 }
 
 /* Subtle markdown-style markers on the colored blocks */
-.post-content h1::before,
-.page-content h1::before { content: '# ';   color: rgba(0,0,0,0.3); font-weight: normal; }
-.post-content h2::before,
-.page-content h2::before { content: '## ';  color: rgba(0,0,0,0.3); font-weight: normal; }
-.post-content h3::before,
-.page-content h3::before { content: '### '; color: rgba(0,0,0,0.3); font-weight: normal; }
+.post-content h1::before, .post-content h2::before, .post-content h3::before,
+.page-content h1::before,  .page-content h2::before,  .page-content h3::before {
+  color: rgba(0,0,0,0.3);
+  font-weight: normal;
+}
+.post-content h1::before, .page-content h1::before { content: '# '; }
+.post-content h2::before, .page-content h2::before { content: '## '; }
+.post-content h3::before, .page-content h3::before { content: '### '; }
 
 p {
   margin-bottom: 1rem;
@@ -474,8 +452,7 @@ li {
   margin-bottom: 0.25rem;
 }
 
-ul li::marker { color: var(--orange); }
-ol li::marker { color: var(--orange); }
+li::marker { color: var(--orange); }
 
 blockquote {
   border-left: 3px solid var(--aqua);
