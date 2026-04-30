@@ -130,7 +130,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 {% endhighlight %}
 
-...interesting. *nitro generator*? like [discord nitro](https://discord.com/nitro).
+*nitro generator*? like [discord nitro](https://discord.com/nitro).
 
 and the same here:
 
