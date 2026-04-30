@@ -648,6 +648,7 @@ pre code {
 .meta-label { color: var(--aqua); }
 
 .post-content { margin-top: 1.5rem; }
+.post-content a { text-decoration: underline; }
 
 .post-nav {
   display: flex;
