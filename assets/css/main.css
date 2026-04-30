@@ -470,6 +470,7 @@ code {
   color: var(--green);
   padding: 0.1em 0.35em;
   font-size: 0.9em;
+  word-break: break-word;
 }
 
 pre {
@@ -501,6 +502,7 @@ details.code-collapsible > .highlighter-rouge { margin: 0; }
   list-style: none;
   border: 1px solid var(--bg2);
   border-left: 3px solid var(--aqua);
+  word-break: break-word;
 }
 .code-collapsible-summary::-webkit-details-marker { display: none; }
 .code-collapsible-summary::before { content: '▶ '; color: var(--aqua); transition: none; }
