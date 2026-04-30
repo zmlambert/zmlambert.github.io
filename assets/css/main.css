@@ -484,6 +484,8 @@ pre {
   line-height: 1.5;
 }
 
+figure.highlight[data-wrap] pre { white-space: pre-wrap; overflow-x: visible; word-break: break-all; }
+
 details.code-collapsible { margin: 1rem 0; }
 details.code-collapsible > pre,
 details.code-collapsible > .highlight,
