@@ -895,6 +895,20 @@ img {
   height: auto;
 }
 
+.img-alt {
+  position: fixed;
+  background: var(--bg1);
+  color: var(--fg2);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  z-index: 1000;
+  max-width: 40ch;
+  border: 1px solid var(--bg3);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

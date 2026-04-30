@@ -31,7 +31,32 @@
     stretchHll();
   }
 
+  function imageAltTooltips() {
+    var tip = document.createElement('span');
+    tip.className = 'img-alt';
+    tip.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(tip);
+
+    document.querySelectorAll('.post-content img[alt], .page-content img[alt]').forEach(function (img) {
+      var alt = img.getAttribute('alt');
+      if (!alt) return;
+
+      img.addEventListener('mouseenter', function () {
+        tip.textContent = alt;
+        tip.style.opacity = '1';
+      });
+      img.addEventListener('mousemove', function (e) {
+        tip.style.left = (e.clientX + 14) + 'px';
+        tip.style.top  = (e.clientY + 14) + 'px';
+      });
+      img.addEventListener('mouseleave', function () {
+        tip.style.opacity = '0';
+      });
+    });
+  }
+
   collapseCodeBlocks();
+  imageAltTooltips();
 
   var resizeTimer;
   window.addEventListener('resize', function () {
