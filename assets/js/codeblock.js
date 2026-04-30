@@ -17,7 +17,7 @@
 
       var details = document.createElement('details');
       details.className = 'code-collapsible';
-      details.open = true;
+      if (!block.hasAttribute('data-collapsed')) details.open = true;
 
       var summary = document.createElement('summary');
       summary.className = 'code-collapsible-summary';
