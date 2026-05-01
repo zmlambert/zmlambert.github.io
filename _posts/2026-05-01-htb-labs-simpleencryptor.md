@@ -171,7 +171,7 @@ the correct timestamp is `0x5a35b162` or `1513468258` in decimal, which is *Sat 
 
 there was a lot of pain involved in translating ghidra decomp to a replicable C source, specifically involving `sbyte` vs `byte`... turns out, it's `signed char` and `unsigned char`. who knew! (not me)
 
-also apparently `char` isnt the same as `unsigned char` or `signed char` because `char` depends on the compiler.
+also apparently `char` isnt the same as `unsigned char` or `signed char` because `char` [depends on the compiler](https://www.gnu.org/software/c-intro-and-ref/manual/html_node/Signed-and-Unsigned-Types.html).
 
 what the hell man!!!!!!!!!
 
