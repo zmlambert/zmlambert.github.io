@@ -279,5 +279,5 @@ HTB{vRy_s1MplE_F1LE3nCryp0r}%
 1. `sbyte` and `byte` in ghidra are `signed char` and `unsigned char`
 2. `unsigned char` is not `char`
 3. creating an unsigned integer from bytes is as simple as adding bytes together, just shifting them into place. interesting.
-4. or is lossy, except it can actually be used to concatenate bytes together. weird!
+4. bitwise-or `|` is lossy, except it can actually be used to concatenate bytes together in a lossless way... weird!
 5. i love C
