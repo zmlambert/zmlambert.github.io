@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "hackthebox labs: rev_simpleencryptor"
-date:   2026-04-30
+date:   2026-05-01
 tags: re c hackthebox htb labs very_easy
 toc: true
 ---
